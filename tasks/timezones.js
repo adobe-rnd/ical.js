@@ -26,7 +26,7 @@ module.exports = function(grunt) {
   function generateZonesFile(tzdbDir, tzdbVersion) {
     let lines = [
       `(function() {`,
-      `  function register(tzdata) { ICAL.TimezoneService.register(ICAL.Component.fromString("BEGIN:VTIMEZONE\\r\\n" + tzdata + "END:VTIMEZONE")) };`,
+      `  function register(tzdata) { ICAL.TimezoneService.register(ICAL.Component.fromString("BEGIN:VTIMEZONE\\r\\n" + tzdata + "\\r\\nEND:VTIMEZONE")) };`,
       `  ICAL.TimezoneService.IANA_TZDB_VERSION = "${tzdbVersion}";`
     ];
 
